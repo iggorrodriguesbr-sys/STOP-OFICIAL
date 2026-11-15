@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Stop Jaguary · Gorjeta dos garçons</title>
+<meta name="theme-color" content="#0b0506">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Stop Jaguary">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--black:#0b0506;--panel:#1c0d10;--line:#3a1a1f;--red:#e0141e;--hot:#ff3d3d;--deep:#7d0a12;--bone:#f6ebe8;--mute:#b39a98;
+--display:"Big Shoulders Display","Impact","Arial Narrow",sans-serif;--body:"Manrope","Segoe UI",system-ui,sans-serif;
+box-sizing:border-box;color-scheme:dark;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%;background:var(--black);-webkit-text-size-adjust:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;min-height:100%;color:var(--bone);font:400 16px/1.5 var(--body);background:radial-gradient(ellipse 120% 45% at 50% -10%,rgba(224,20,30,.35),transparent 60%),var(--black)}
+.wrap{max-width:480px;margin:0 auto;padding:20px 16px 100px}
+h1{margin:0 0 16px;font:900 38px/.95 var(--display);text-transform:uppercase}
+h1 small{display:block;font:700 14px/1.3 var(--body);color:var(--mute);text-transform:none;margin-top:6px}
+.brand{display:flex;align-items:center;gap:12px;margin-bottom:16px}.brand h1{margin:0}.brand svg{width:66px;height:66px;flex:none;filter:drop-shadow(0 6px 14px rgba(224,20,30,.45))}
+section{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:14px}
+h2{margin:0 0 4px;font:900 24px/1.1 var(--display);text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.st{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--red);font:900 16px var(--display)}
+.hint{margin:0 0 12px;color:var(--mute);font-size:14px}
+button{font:inherit;cursor:pointer;border:0;color:inherit;touch-action:manipulation}
+button:focus-visible,input:focus-visible{outline:3px solid var(--hot);outline-offset:2px}
+input{width:100%;height:52px;border-radius:14px;border:1.5px solid var(--line);background:var(--black);color:var(--bone);font:600 17px var(--body);padding:0 14px}
+input::placeholder{color:#6f5654}
+.row{display:flex;gap:10px}.field{flex:1;min-width:0;position:relative}
+.money input{padding-left:46px}.money::before{content:"R$";position:absolute;left:14px;top:0;height:52px;display:flex;align-items:center;color:var(--hot);font-weight:800;font-size:15px}
+.add{height:52px;padding:0 20px;border-radius:14px;background:var(--red);color:#fff;font-weight:800;box-shadow:0 6px 18px rgba(224,20,30,.4)}
+.add:active{transform:scale(.97)}
+.ghost{width:100%;height:50px;border-radius:14px;background:transparent;border:1.5px solid var(--red);font-weight:800;margin-top:10px}
+.big{height:56px;font-size:17px;width:100%;margin-top:10px}
+.bar{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.bar>div{flex:1;text-align:center;line-height:1.25}.bar b{display:block;font:900 24px var(--display);text-transform:uppercase}.bar small{color:var(--mute);font-size:13px}
+.bar button{width:48px;height:48px;border-radius:14px;background:var(--panel);border:1px solid var(--line);font-size:24px;font-weight:800}
+.link{background:none;color:var(--hot);font-weight:700;text-decoration:underline;padding:0 0 12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:flex;align-items:center;gap:6px;height:46px;padding:0 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--black);color:var(--mute);font-weight:700}
+.chip.on{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 4px 14px rgba(224,20,30,.4)}.chip.on::before{content:"✓"}
+ul{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:8px}
+li{display:flex;align-items:center;gap:10px;background:var(--black);border:1px solid var(--line);border-left:4px solid var(--red);border-radius:12px;padding:10px 10px 10px 14px}
+.who{flex:1;min-width:0}.who b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.who small{display:block;color:var(--mute);font-size:13px;line-height:1.35}
+.v{font:800 20px var(--display);white-space:nowrap;font-variant-numeric:tabular-nums}
+.del{width:36px;height:36px;border-radius:10px;background:#120708;color:var(--mute);font-size:18px}
+.pay{height:38px;padding:0 12px;border-radius:10px;background:transparent;border:1.5px solid var(--red);font-weight:800;font-size:14px}.pay.on{background:#1f7a3a;border-color:#1f7a3a;color:#fff}
+.empty{color:var(--mute);font-size:14px;text-align:center;padding:10px 0}
+.sum{display:flex;justify-content:space-between;align-items:baseline;margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);font-weight:700;color:var(--mute)}.sum b{font:900 26px var(--display);color:var(--bone)}
+.hero{position:relative;overflow:hidden;border-radius:24px;padding:22px 20px 18px;margin-bottom:14px;background:linear-gradient(155deg,#e0141e,#9c0b14 55%,#4a050a);box-shadow:0 18px 44px rgba(224,20,30,.35),inset 0 0 0 1px rgba(255,255,255,.14)}
+.hero::before{content:"";position:absolute;inset:0;opacity:.3;pointer-events:none;background:radial-gradient(circle at 84% 22%,#000 0 14px,transparent 15px),radial-gradient(circle at 94% 50%,#000 0 8px,transparent 9px),radial-gradient(circle at 70% 70%,#000 0 16px,transparent 17px),radial-gradient(circle at 56% 14%,#000 0 7px,transparent 8px)}
+.hero>*{position:relative}.hero .l{font-weight:800;font-size:14px}.hero .n{font:900 clamp(52px,17vw,76px)/1 var(--display);text-shadow:0 4px 0 rgba(0,0,0,.35);font-variant-numeric:tabular-nums}.hero .s{font-size:14px;opacity:.92}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}.stat{background:rgba(0,0,0,.38);border-radius:12px;padding:9px 10px}.stat span{display:block;font-size:12px;opacity:.85;font-weight:600}.stat b{font:800 17px var(--display);white-space:nowrap}
+nav{position:fixed;left:0;right:0;bottom:0;z-index:5;display:flex;gap:6px;background:#120708;border-top:1px solid var(--line);padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px))}
+nav button{flex:1;height:52px;background:none;border-radius:14px;color:var(--mute);font-weight:800;font-size:15px}nav button.on{background:var(--red);color:#fff}
+.warnb{background:var(--deep);border:1px solid var(--red);border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:14px;font-weight:600}.warnb[hidden]{display:none}
+[hidden]{display:none!important}
+.toast{position:fixed;left:50%;bottom:calc(86px + env(safe-area-inset-bottom,0px));transform:translate(-50%,20px);opacity:0;background:#fff;color:#000;font-weight:800;padding:11px 18px;border-radius:999px;transition:.25s;pointer-events:none;z-index:9;max-width:90%;text-align:center}.toast.on{opacity:1;transform:translate(-50%,0)}
+.foot{margin:18px 0 0;text-align:center;color:var(--mute);font-size:13px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div id="warn" class="warnb" hidden>Não consegui salvar neste aparelho. Use Ajustes &gt; Salvar cópia para não perder os dados.</div>
+<div class="brand"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Stop Jaguary"><polygon points="188.7,136.7 136.7,188.7 63.3,188.7 11.3,136.7 11.3,63.3 63.3,11.3 136.7,11.3 188.7,63.3" fill="#fff"/><polygon points="181.3,133.7 133.7,181.3 66.3,181.3 18.7,133.7 18.7,66.3 66.3,18.7 133.7,18.7 181.3,66.3" fill="#e0141e"/><rect x="18.7" y="100" width="162.6" height="32" fill="#0b0506"/><text x="100" y="64" font-size="58" textLength="118" lengthAdjust="spacingAndGlyphs" font-family="'Big Shoulders Display',Impact,'Arial Narrow',sans-serif" font-weight="900" fill="#fff" text-anchor="middle" dominant-baseline="central">STOP</text><text x="100" y="117" font-size="28" textLength="136" lengthAdjust="spacingAndGlyphs" font-family="'Big Shoulders Display',Impact,'Arial Narrow',sans-serif" font-weight="900" fill="#fff" text-anchor="middle" dominant-baseline="central">JAGUARY</text></svg><h1>Stop Jaguary<small>Pastelaria &amp; Lanchonete · Divisão dos 10%</small></h1></div>
+
+<main id="v-dia">
+  <section id="intro"><h2>Como funciona</h2><p class="hint" style="margin:6px 0 0">1. Em <b>Ajustes</b>, cadastre os garçons (só uma vez).<br>2. Todo dia, aqui em <b>Lançar</b>, marque quem trabalhou e some as comandas.<br>3. Na segunda, abra <b>Semana</b> e veja quanto pagar para cada um.</p></section>
+  <div class="bar"><button id="prev" aria-label="Dia anterior">‹</button><div><b id="dayName"></b><small id="dayHint"></small></div><button id="next" aria-label="Próximo dia">›</button></div>
+  <button class="link" id="todayBtn" hidden>Voltar para hoje</button>
+  <section><h2><span class="st">1</span>Quem trabalhou?</h2><p class="hint">Toque nos nomes. Só eles dividem os 10% deste dia.</p><div id="chips" class="chips"></div></section>
+  <section><h2><span class="st">2</span>Comandas</h2><p class="hint">Digite o valor de cada comanda e toque em Somar.</p>
+    <div class="row"><div class="field money"><input id="ordIn" inputmode="decimal" placeholder="0,00" aria-label="Valor da comanda" autocomplete="off"></div><button class="add" id="ordBtn">Somar</button></div>
+    <ul id="orders"></ul><div class="sum"><span>Total do dia</span><b id="sumOrd"></b></div></section>
+  <div class="hero"><div class="l"><span class="st" style="background:#000;margin-right:8px">3</span>Cada garçom recebe hoje</div><div class="n" id="share"></div><div class="s" id="dSub"></div>
+    <div class="stats"><div class="stat"><span>Vendido</span><b id="dTot"></b></div><div class="stat"><span id="dPct"></span><b id="dTip"></b></div><div class="stat"><span>Garçons</span><b id="dCnt"></b></div></div></div>
+</main>
+
+<main id="v-sem" hidden>
+  <div class="bar"><button id="wprev" aria-label="Semana anterior">‹</button><div><b id="wLabel"></b><small id="wHint"></small></div><button id="wnext" aria-label="Próxima semana">›</button></div>
+  <div class="hero"><div class="l">Total para pagar na semana</div><div class="n" id="wPay"></div><div class="s">Cada um recebe só pelos dias em que trabalhou.</div>
+    <div class="stats"><div class="stat"><span>Vendido</span><b id="wSold"></b></div><div class="stat"><span>10% do dia a dia</span><b id="wTip"></b></div><div class="stat"><span>Falta pagar</span><b id="wLeft"></b></div></div></div>
+  <section><h2>Quanto pagar</h2><p class="hint">Toque em Pagar depois de entregar o dinheiro.</p><ul id="wList"></ul></section>
+  <section><h2>Dia a dia</h2><ul id="wDays"></ul></section>
+  <button class="add big" id="wRep">Exportar relatório da semana</button>
+  <button class="ghost" id="wCsv">Exportar planilha da semana</button>
+  <button class="ghost" id="wCopy">Copiar resumo para WhatsApp</button>
+</main>
+
+<main id="v-aj" hidden>
+  <section><h2>Garçons</h2><p class="hint">Cadastre uma vez. Eles ficam salvos para todos os dias.</p>
+    <div class="row"><div class="field"><input id="wIn" placeholder="Nome do garçom" aria-label="Nome do garçom" maxlength="30" autocomplete="off"></div><button class="add" id="wBtn">Cadastrar</button></div><ul id="roster"></ul></section>
+  <section><h2>Porcentagem</h2><p class="hint">Vale para os dias lançados daqui para frente.</p><div class="row" style="align-items:center"><div class="field" style="flex:none;width:110px"><input id="pctIn" inputmode="decimal" aria-label="Porcentagem"></div><b style="font-size:20px">%</b></div></section>
+  <section><h2>Cópia de segurança</h2><p class="hint">Os dados ficam só neste celular. Salve uma cópia de vez em quando. Para usar em outro celular, restaure a cópia lá.</p>
+    <button class="ghost" id="bkSave" style="margin-top:0">Salvar cópia</button><button class="ghost" id="bkLoad">Restaurar cópia</button><input type="file" id="fileIn" accept=".json,application/json" hidden></section>
+  <p class="foot">Stop Jaguary · Pastelaria &amp; Lanchonete<br>Av. Marginal, Rua Alfredo Bueno, 871 · Jaguariúna, SP</p>
+</main>
+</div>
+<nav><button data-tab="dia" class="on">Lançar</button><button data-tab="sem">Semana</button><button data-tab="aj">Ajustes</button></nav>
+<div class="toast" id="toast"></div>
+
+<script>
+var K2="stopjaguary:v2",$=function(i){return document.getElementById(i)};
+function pad(x){return(x<10?"0":"")+x}
+function fmtD(d){return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate())}
+function parseD(s){var p=s.split("-");return new Date(+p[0],+p[1]-1,+p[2])}
+function addD(s,n){var d=parseD(s);d.setDate(d.getDate()+n);return fmtD(d)}
+function today(){return fmtD(new Date())}
+function wkKey(s){var d=parseD(s);d.setDate(d.getDate()-(d.getDay()+6)%7);return fmtD(d)}
+function dm(s){var p=s.split("-");return p[2]+"/"+p[1]}
+var WD=["domingo","segunda","terça","quarta","quinta","sexta","sábado"];
+function wd(s){return WD[parseD(s).getDay()]}
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1)}
+function brl(c){return (c/100).toLocaleString("pt-BR",{style:"currency",currency:"BRL"})}
+function f2(c){return (c/100).toFixed(2).replace(".",",")}
+function parse(t){t=String(t).replace(/[^\d.,]/g,"");if(t.indexOf(",")>-1)t=t.replace(/\./g,"").replace(",",".");var n=parseFloat(t);return isFinite(n)?Math.round(n*100):NaN}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function toast(m){var t=$("toast");t.textContent=m;t.classList.add("on");clearTimeout(toast.t);toast.t=setTimeout(function(){t.classList.remove("on")},2200)}
+
+function load(){
+  try{var r=localStorage.getItem(K2);if(r){var p=JSON.parse(r);if(p&&p.days)return fix(p)}}catch(e){}
+  var s={pct:10,roster:[],days:{},paid:{}};
+  try{var o=JSON.parse(localStorage.getItem("stopjaguari:v1")||"null");
+    if(o){
+      s.pct=o.pct>0?o.pct:10;
+      var put=function(date,orders,ws,pct){var d=s.days[date]=s.days[date]||{orders:[],workers:[],pct:pct||s.pct};d.orders=d.orders.concat(orders||[]);(ws||[]).forEach(function(w){if(d.workers.indexOf(w)<0)d.workers.push(w);if(s.roster.indexOf(w)<0)s.roster.push(w)})};
+      (o.roster||[]).forEach(function(w){if(s.roster.indexOf(w)<0)s.roster.push(w)});
+      (o.history||[]).forEach(function(x){put(x.date,x.orders,x.waiters,x.pct)});
+      if((o.orders||[]).length||(o.waiters||[]).length)put(today(),o.orders,o.waiters,o.pct);
+    }}catch(e){}
+  return s;
+}
+function fix(p){if(!Array.isArray(p.roster))p.roster=[];if(!p.paid)p.paid={};if(!(p.pct>0))p.pct=10;return p}
+var S=load(),cur=today(),wsel=null,tab="dia";
+function save(){var f=false;try{localStorage.setItem(K2,JSON.stringify(S))}catch(e){f=true}$("warn").hidden=!f}
+function day(d,mk){var x=S.days[d];if(!x&&mk)x=S.days[d]={orders:[],workers:[],pct:S.pct};return x}
+function calcDay(x){var t=0;x.orders.forEach(function(v){t+=v});var tip=Math.round(t*x.pct/100),n=x.workers.length,sh=n?Math.floor(tip/n):0;return {total:t,tip:tip,n:n,share:sh,left:n?tip-sh*n:0}}
+function calcWeek(k){
+  var r={total:0,tip:0,pay:0,per:{},days:[]};
+  for(var i=0;i<7;i++){var d=addD(k,i),x=S.days[d];if(!x||(!x.orders.length&&!x.workers.length))continue;
+    var c=calcDay(x);r.total+=c.total;r.tip+=c.tip;r.days.push({d:d,c:c,w:x.workers});
+    x.workers.forEach(function(w){var p=r.per[w]=r.per[w]||{sum:0,ds:[]};p.sum+=c.share;p.ds.push(d)})}
+  r.names=Object.keys(r.per).sort(function(a,b){return a.localeCompare(b,"pt-BR")});
+  r.names.forEach(function(n){r.pay+=r.per[n].sum});
+  r.paid=0;r.names.forEach(function(n){if(S.paid[k+"|"+n])r.paid+=r.per[n].sum});
+  return r;
+}
+function defWeek(){var t=today();var k=wkKey(t);return parseD(t).getDay()===1?addD(k,-7):k}
+function dayNames(){var x=S.days[cur],w=x?x.workers:[];return S.roster.concat(w.filter(function(n){return S.roster.indexOf(n)<0}))}
+function toggleW(i){var n=dayNames()[i],x=day(cur,1),k=x.workers.indexOf(n);if(k>-1)x.workers.splice(k,1);else x.workers.push(n);render()}
+
+function renderDay(){
+  var t=today(),x=S.days[cur]||{orders:[],workers:[],pct:S.pct},c=calcDay(x),pl=String(x.pct).replace(".",",")+"%";
+  $("intro").hidden=S.roster.length>0||Object.keys(S.days).length>0;
+  $("dayName").textContent=cap(wd(cur))+", "+dm(cur);
+  $("dayHint").textContent=cur===t?"Hoje":wd(cur)==="segunda"?"Segunda: a casa não abre":"Use as setas para mudar o dia";
+  $("todayBtn").hidden=cur===t;
+  var names=dayNames();
+  $("chips").innerHTML=names.length?names.map(function(n,i){return '<button class="chip'+(x.workers.indexOf(n)>-1?' on':'')+'" data-i="'+i+'">'+esc(n)+'</button>'}).join(""):'<p class="empty">Nenhum garçom cadastrado ainda.</p><button class="add" data-tab="aj">Cadastrar garçons</button>';
+  $("orders").innerHTML=x.orders.length?x.orders.map(function(v,i){return '<li><span class="who"><b>Comanda '+(i+1)+'</b></span><span class="v">'+brl(v)+'</span><button class="del" data-o="'+i+'" aria-label="Remover comanda '+(i+1)+'">×</button></li>'}).reverse().join(""):'<div class="empty">Nenhuma comanda neste dia.</div>';
+  $("sumOrd").textContent=brl(c.total);$("share").textContent=brl(c.share);
+  $("dTot").textContent=brl(c.total);$("dTip").textContent=brl(c.tip);$("dCnt").textContent=c.n;$("dPct").textContent=pl+" da casa";
+  $("dSub").textContent=!c.total?"Some as comandas do dia.":!c.n?"Marque quem trabalhou neste dia.":pl+" de "+brl(c.total)+" dividido por "+c.n+(c.n>1?" garçons":" garçom")+(c.left?" · sobram "+brl(c.left):"");
+}
+function renderWeek(){
+  if(!wsel)wsel=defWeek();
+  var r=calcWeek(wsel);
+  $("wLabel").textContent=dm(wsel)+" a "+dm(addD(wsel,6));
+  $("wHint").textContent="Pagamento na segunda, "+dm(addD(wsel,7));
+  $("wPay").textContent=brl(r.pay);$("wSold").textContent=brl(r.total);$("wTip").textContent=brl(r.tip);$("wLeft").textContent=brl(r.pay-r.paid);
+  $("wList").innerHTML=r.names.length?r.names.map(function(n){var p=r.per[n],ok=S.paid[wsel+"|"+n];
+    return '<li><div class="who"><b>'+esc(n)+'</b><small>'+p.ds.length+(p.ds.length>1?' dias: ':' dia: ')+p.ds.map(function(d){return wd(d).slice(0,3)}).join(", ")+'</small></div><span class="v">'+brl(p.sum)+'</span><button class="pay'+(ok?' on':'')+'" data-p="'+esc(n)+'">'+(ok?'Pago ✓':'Pagar')+'</button></li>'}).join(""):'<div class="empty">Nenhum dia lançado nesta semana. Vá em Lançar.</div>';
+  $("wDays").innerHTML=r.days.length?r.days.map(function(x){return '<li><div class="who"><b>'+cap(wd(x.d))+' '+dm(x.d)+'</b><small>Vendeu '+brl(x.c.total)+' · cada um '+brl(x.c.share)+'<br>'+(x.w.length?x.w.map(esc).join(", "):'Ninguém marcado')+'</small></div></li>'}).join(""):'<div class="empty">Sem dias nesta semana.</div>';
+}
+function renderSet(){
+  $("roster").innerHTML=S.roster.length?S.roster.map(function(n,i){return '<li><span class="who"><b>'+esc(n)+'</b></span><button class="del" data-r="'+i+'" aria-label="Remover '+esc(n)+'">×</button></li>'}).join(""):'<div class="empty">Nenhum garçom cadastrado.</div>';
+  if(document.activeElement!==$("pctIn"))$("pctIn").value=String(S.pct).replace(".",",");
+}
+function render(){renderDay();renderWeek();renderSet();save()}
+function go(t){tab=t;["dia","sem","aj"].forEach(function(k){$("v-"+k).hidden=k!==t});
+  Array.prototype.forEach.call(document.querySelectorAll("nav button"),function(b){b.classList.toggle("on",b.dataset.tab===t)});window.scrollTo(0,0)}
+
+async function saveFile(name,data){
+  var dl=null;try{dl=window.claude&&await window.claude.use("downloads")}catch(e){}
+  if(dl){try{await dl.save({filename:name,data:data});return true}catch(e){if(e&&e.code==="declined")return false}}
+  var ty=/\.csv$/.test(name)?"text/csv":/\.json$/.test(name)?"application/json":"text/html";
+  var u=URL.createObjectURL(new Blob([data],{type:ty+";charset=utf-8"})),a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(u)},4000);return true;
+}
+function weekTitle(){return "Semana "+dm(wsel)+" a "+dm(addD(wsel,6))}
+function weekHTML(r){
+  var rows=r.names.map(function(n){var p=r.per[n];return '<tr><td>'+esc(n)+'<br><small>'+p.ds.length+' dia(s): '+p.ds.map(function(d){return wd(d).slice(0,3)}).join(", ")+'</small></td><td class=r>'+brl(p.sum)+'</td><td class=r>'+(S.paid[wsel+"|"+n]?"Pago":"")+'</td></tr>'}).join("");
+  var ds=r.days.map(function(x){return '<tr><td>'+cap(wd(x.d))+' '+dm(x.d)+'<br><small>'+(x.w.map(esc).join(", ")||"Ninguém marcado")+'</small></td><td class=r>'+brl(x.c.total)+'</td><td class=r>'+brl(x.c.share)+'</td></tr>'}).join("");
+  return `<!DOCTYPE html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stop Jaguary - ${weekTitle()}</title><style>*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{font:15px/1.5 Arial,sans-serif;color:#1a0a0c;max-width:720px;margin:0 auto;padding:20px}header{background:#0b0506;color:#fff;border-bottom:8px solid #e0141e;padding:20px 22px;border-radius:14px 14px 0 0}h1{margin:0;font:900 30px Impact,'Arial Narrow',sans-serif;text-transform:uppercase}header p{margin:4px 0 0;color:#f0b8b8}.hero{background:#e0141e;color:#fff;border-radius:14px;padding:18px 22px;margin:18px 0}.hero b{display:block;font:900 48px Impact,'Arial Narrow',sans-serif}h2{font:900 20px Impact,'Arial Narrow',sans-serif;text-transform:uppercase;color:#b30d16;margin:22px 0 6px}table{width:100%;border-collapse:collapse}th{text-align:left;font-size:12px;color:#6b4a4d;border-bottom:2px solid #e0141e}td{padding:8px 4px;border-bottom:1px solid #ead3d3;vertical-align:top}small{color:#6b4a4d}.r{text-align:right;font-weight:700}footer{margin-top:24px;color:#8a6c6f;font-size:12px}</style></head><body><header><h1>Stop Jaguary</h1><p>Pastelaria &amp; Lanchonete · ${weekTitle()} · pagamento em ${dm(addD(wsel,7))}</p></header><div class="hero">Total para pagar<b>${brl(r.pay)}</b>Vendido na semana: ${brl(r.total)}</div><h2>Quanto pagar</h2><table><tr><th>Garçom</th><th class=r>Valor</th><th class=r></th></tr>${rows||"<tr><td>Nenhum dia lançado</td></tr>"}</table><h2>Dia a dia</h2><table><tr><th>Dia</th><th class=r>Vendido</th><th class=r>Cada um</th></tr>${ds}</table><footer>Gerado pelo app Stop Jaguary. Para salvar em PDF, abra o arquivo e use Imprimir.</footer></body></html>`;
+}
+function needWeek(){var r=calcWeek(wsel);if(!r.days.length){toast("Esta semana não tem dias lançados");return null}return r}
+$("wRep").onclick=async function(){var r=needWeek();if(r&&await saveFile("stop-jaguary-semana-"+wsel+".html",weekHTML(r)))toast("Arquivo salvo")};
+$("wCsv").onclick=async function(){var r=needWeek();if(!r)return;
+  var L=["Stop Jaguary;"+weekTitle(),"Total vendido;"+f2(r.total),"Total a pagar;"+f2(r.pay),"","Garçom;Dias trabalhados;Valor da semana;Pago"];
+  r.names.forEach(function(n){L.push(n.replace(/;/g,",")+";"+r.per[n].ds.length+";"+f2(r.per[n].sum)+";"+(S.paid[wsel+"|"+n]?"Sim":"Não"))});
+  L.push("","Dia;Vendido;Cada um;Garçons");
+  r.days.forEach(function(x){L.push(wd(x.d)+" "+dm(x.d)+";"+f2(x.c.total)+";"+f2(x.c.share)+";"+x.w.join(", ").replace(/;/g,","))});
+  if(await saveFile("stop-jaguary-semana-"+wsel+".csv","\ufeff"+L.join("\r\n")))toast("Arquivo salvo")};
+$("wCopy").onclick=function(){var r=needWeek();if(!r)return;
+  var t="Stop Jaguary - "+weekTitle()+"\nTotal vendido: "+brl(r.total)+"\n\n"+r.names.map(function(n){return n+": "+brl(r.per[n].sum)+" ("+r.per[n].ds.length+(r.per[n].ds.length>1?" dias)":" dia)")}).join("\n")+"\n\nTotal a pagar: "+brl(r.pay);
+  try{navigator.clipboard.writeText(t).then(function(){toast("Resumo copiado")},function(){toast("Não foi possível copiar")})}catch(e){toast("Não foi possível copiar")}};
+
+$("bkSave").onclick=async function(){if(await saveFile("stop-jaguary-copia-"+today()+".json",JSON.stringify(S)))toast("Cópia salva")};
+$("bkLoad").onclick=function(){$("fileIn").click()};
+$("fileIn").onchange=function(){var f=this.files[0],inp=this;if(!f)return;var rd=new FileReader();
+  rd.onload=function(){try{var p=JSON.parse(rd.result);if(!p||typeof p.days!=="object"||!Array.isArray(p.roster))throw 0;S=fix(p);wsel=null;render();toast("Cópia restaurada")}catch(e){toast("Esse arquivo não é uma cópia válida")}inp.value=""};
+  rd.readAsText(f)};
+
+function addOrder(){var v=parse($("ordIn").value);if(!(v>0)){toast("Digite um valor válido");$("ordIn").focus();return}day(cur,1).orders.push(v);$("ordIn").value="";render();$("ordIn").focus()}
+function addWaiter(){var n=$("wIn").value.trim().replace(/\s+/g," ");if(!n){toast("Digite o nome do garçom");return}
+  if(S.roster.some(function(x){return x.toLowerCase()===n.toLowerCase()})){toast("Esse nome já está cadastrado");return}
+  S.roster.push(n);$("wIn").value="";render();toast(n+" cadastrado")}
+$("ordBtn").onclick=addOrder;$("wBtn").onclick=addWaiter;
+$("ordIn").onkeydown=function(e){if(e.key==="Enter")addOrder()};$("wIn").onkeydown=function(e){if(e.key==="Enter")addWaiter()};
+$("pctIn").oninput=function(){var v=parseFloat(this.value.replace(",","."));if(v>0&&v<=100){S.pct=v;save()}};
+$("prev").onclick=function(){cur=addD(cur,-1);render()};$("next").onclick=function(){cur=addD(cur,1);render()};$("todayBtn").onclick=function(){cur=today();render()};
+$("wprev").onclick=function(){wsel=addD(wsel||defWeek(),-7);render()};$("wnext").onclick=function(){wsel=addD(wsel||defWeek(),7);render()};
+document.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;var d=b.dataset;
+  if(d.tab)go(d.tab);
+  else if(d.i!==undefined)toggleW(+d.i);
+  else if(d.o!==undefined){S.days[cur].orders.splice(+d.o,1);render()}
+  else if(d.r!==undefined){var n=S.roster.splice(+d.r,1)[0];render();toast(n+" removido da lista")}
+  else if(d.p!==undefined){var k=wsel+"|"+d.p;if(S.paid[k])delete S.paid[k];else S.paid[k]=1;render()}});
+render();
+if("serviceWorker" in navigator)window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").catch(function(){})});
+</script>
+</body>
+</html>
